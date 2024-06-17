@@ -1,0 +1,32 @@
+<Item_Label@Label>:
+    font_size: '15sp'
+
+<root>:
+    orientation: 'vertical'
+    spacing: '2dp'
+    padding: ('4dp', '4dp', '4dp', '4dp')
+
+    FloatLayout:
+        
+        
+        canvas:
+            Color:
+                rgba: (0, 255, 112, 1)#rgba(0, 255, 112, 1)
+            Line:
+                width: .3
+                rectangle: self.x, self.y, self.width, self.height
+        orientation: 'vertical'
+        pos_hint: {'x': 0, 'y': .85}
+        size_hint: 1, 0.15
+        CheckBox:
+            active: root.BTC_switch_function()
+            size_hint: .2, .2
+            pos_hint: {'x': .75, 'y': .425}
+            on_active: root.BTC_switch_check(self, self.active)
+        Label:
+            text: 'BTC|USDT'
+            pos_hint: {"x": 0, "y": 0}
+            font_size: '30sp'
+        Image:
+            pos_hint: {"x": -.25, "y": 0}
+            source: "Images/BTC_IMAGE.png"
