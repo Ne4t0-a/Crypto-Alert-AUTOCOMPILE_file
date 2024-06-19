@@ -13,7 +13,6 @@ from bs4 import BeautifulSoup
 from time import time
 
 
-
 Config.set('kivy', 'keyboard_mode', 'systemanddock')
 
 
@@ -22,7 +21,7 @@ class root(FloatLayout):
     def BTC_switch_function():
         return data["BTC_switch"]
     
-    def BTC_switch_check(self, checkbox, value):
+    def BTC_switch_check(self, checkbox, value, heigh_price, low_price):
         data["BTC_switch"] = value
         with open('YoBit парсер/config.py', 'w') as file:
             file.write(f'data = {str(data)}')
